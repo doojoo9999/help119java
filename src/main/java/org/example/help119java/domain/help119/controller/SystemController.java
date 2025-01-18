@@ -1,5 +1,7 @@
 package org.example.help119java.domain.help119.controller;
 
+import org.example.help119java.domain.help119.dto.request.AmbulanceRequest;
+import org.example.help119java.domain.help119.service.SystemService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,18 +22,18 @@ public class SystemController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    public ResponseEntity<List<AmbulanceResponse>> getAmbulanceList() {
-        List<AmbulanceResponse> ambulanceList = systemService.getCalledAmbList();
-        return ResponseEntity.status(HttpStatus.OK).body(ambulanceList);
-    }
-
-    public ResponseEntity<AmbulanceResponse> getAmbulance(Long ambId) {
-        AmbulanceResponse ambulanceResponse = systemService.getCalledAmb(ambId);
-        return ResponseEntity.status(HttpStatus.OK).body(ambulanceResponse);
-    }
-
-    public ResponseEntity<Void> bookHospital(HospitalBookingRequest request) {
-        systemService.bookHospital(request);
-        return ResponseEntity.status(HttpStatus.OK).build();
-    }
+//    public ResponseEntity<List<AmbulanceResponse>> getAmbulanceList() {
+//        List<AmbulanceResponse> ambulanceList = systemService.getCalledAmbList();
+//        return ResponseEntity.status(HttpStatus.OK).body(ambulanceList);
+//    }
+//
+//    public ResponseEntity<AmbulanceResponse> getAmbulance(Long ambId) {
+//        AmbulanceResponse ambulanceResponse = systemService.getCalledAmb(ambId);
+//        return ResponseEntity.status(HttpStatus.OK).body(ambulanceResponse);
+//    }
+//
+//    public ResponseEntity<Void> bookHospital(HospitalBookingRequest request) {
+//        systemService.bookHospital(request);
+//        return ResponseEntity.status(HttpStatus.OK).build();
+//    }
 }
